@@ -59,21 +59,22 @@ public class SelectedCombinationAdapter extends RecyclerView.Adapter<RecyclerVie
         final SelectedCombinationAdapter.ResultsVH resultsVH = (SelectedCombinationAdapter.ResultsVH) holder;
         if(position!=0) resultsVH.resultsRowBinding.ResultsHeading.setVisibility(View.GONE);
         if(resultantfeatureidposition==2){
-            resultsVH.resultsRowBinding.resultsId.setText(resultantfeatureidposition+"");
-            resultsVH.resultsRowBinding.resultsName.setText(featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition%2).getName());
-            resultsVH.resultsRowBinding.resultsoptionId.setText(featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition%2).getId());
-            Picasso.with(cnt).load(featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition%2).getIcon()).into(resultsVH.resultsRowBinding.resultssicon);
+            int listsize=featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().size();
+            resultsVH.resultsRowBinding.resultsId.setText("Feature ID: "+resultantfeatureidposition+"");
+            resultsVH.resultsRowBinding.resultsName.setText("Feature Name: "+featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition%listsize).getName());
+            resultsVH.resultsRowBinding.resultsoptionId.setText("Option ID: "+featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition%listsize).getId());
+            Picasso.with(cnt).load(featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition%listsize).getIcon()).into(resultsVH.resultsRowBinding.resultssicon);
         }
         else if(resultantfeatureidposition==3){
-            resultsVH.resultsRowBinding.resultsId.setText(resultantfeatureidposition+"");
-            resultsVH.resultsRowBinding.resultsName.setText(featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition%10).getName());
-            resultsVH.resultsRowBinding.resultsoptionId.setText(featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition%10).getId());
+            resultsVH.resultsRowBinding.resultsId.setText("Feature ID: "+resultantfeatureidposition+"");
+            resultsVH.resultsRowBinding.resultsName.setText("Feature Name: "+featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition%10).getName());
+            resultsVH.resultsRowBinding.resultsoptionId.setText("Option ID: "+featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition%10).getId());
             Picasso.with(cnt).load(featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition%10).getIcon()).into(resultsVH.resultsRowBinding.resultssicon);
         }
         else{
-            resultsVH.resultsRowBinding.resultsId.setText(resultantfeatureidposition+"");
-            resultsVH.resultsRowBinding.resultsName.setText(featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition-1).getName());
-            resultsVH.resultsRowBinding.resultsoptionId.setText(featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition-1).getId());
+            resultsVH.resultsRowBinding.resultsId.setText("Feature ID: "+resultantfeatureidposition+"");
+            resultsVH.resultsRowBinding.resultsName.setText("Feature Name: "+featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition-1).getName());
+            resultsVH.resultsRowBinding.resultsoptionId.setText("Option ID: "+featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition-1).getId());
             Picasso.with(cnt).load(featuresList.get(0).getFeatures().get(resultantfeatureidposition-1).getOptions().get(resultantoptionposition-1).getIcon()).into(resultsVH.resultsRowBinding.resultssicon);
         }
   }
@@ -84,10 +85,6 @@ public class SelectedCombinationAdapter extends RecyclerView.Adapter<RecyclerVie
     }
 
     public class ResultsVH extends RecyclerView.ViewHolder{
-        private TextView storagename;
-        private TextView storageid;
-        private ImageView storageicon;
-        private TextView optionid;
         ResultsRowBinding resultsRowBinding;
         public ResultsVH(@NonNull ResultsRowBinding itemView) {
             super(itemView.getRoot());

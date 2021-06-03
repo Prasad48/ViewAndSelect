@@ -77,7 +77,10 @@ public class FeaturesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         switch (getItemViewType(position)) {
             case MobileList:
                 final MobileVH mobileVH = (MobileVH) holder;
-                if(position!=0) mobileVH.mobileBinding.MobilePhonesHeading.setVisibility(View.GONE);
+                if(position!=0)
+                    mobileVH.mobileBinding.MobilePhonesHeading.setVisibility(View.GONE);
+                else
+                    mobileVH.mobileBinding.MobilePhonesHeading.setVisibility(View.VISIBLE);
                 mobileVH.mobileBinding.featureId.setText("Feature ID: "+arrList.get(0).getFeatures().get(MobileList).getFeature_id());
                 mobileVH.mobileBinding.mobileName.setText("Mobile Name: "+arrList.get(0).getFeatures().get(MobileList).getOptions().get(position).getName());
                 mobileVH.mobileBinding.optionId.setText("Option ID: "+arrList.get(0).getFeatures().get(MobileList).getOptions().get(position).getId());
