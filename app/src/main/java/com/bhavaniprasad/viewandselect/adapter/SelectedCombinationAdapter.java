@@ -1,28 +1,19 @@
 package com.bhavaniprasad.viewandselect.adapter;
 
 import android.content.Context;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bhavaniprasad.viewandselect.R;
-import com.bhavaniprasad.viewandselect.SelectedCombination;
-import com.bhavaniprasad.viewandselect.databinding.ActivitySelectedCombinationBinding;
-import com.bhavaniprasad.viewandselect.databinding.FeaturesRowLayoutBinding;
 import com.bhavaniprasad.viewandselect.databinding.ResultsRowBinding;
-import com.bhavaniprasad.viewandselect.databinding.StorageRowLayoutBinding;
 import com.bhavaniprasad.viewandselect.model.features;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
